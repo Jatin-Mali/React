@@ -1,0 +1,139 @@
+[
+  {
+    "id": "calc1",
+    "name": "Basic Arithmetic Calculator",
+    "description": "Performs basic arithmetic operations: addition, subtraction, multiplication, and division.",
+    "formula": [
+      "Addition: A + B",
+      "Subtraction: A - B",
+      "Multiplication: A × B",
+      "Division: A ÷ B"
+    ],
+    "example": "A = 12, B = 4 → 12 + 4 = 16, 12 - 4 = 8, 12 × 4 = 48, 12 ÷ 4 = 3",
+    "steps": [
+      "Input the first number (A).",
+      "Input the second number (B).",
+      "Choose the operation: +, -, ×, ÷.",
+      "Apply the chosen operation on A and B.",
+      "Display the result."
+    ]
+  },
+  {
+    "id": "calc2",
+    "name": "Square Root Calculator",
+    "description": "Finds the square root of a number.",
+    "formula": "√A",
+    "example": "A = 49 → √49 = 7",
+    "steps": [
+      "Input the number (A).",
+      "Calculate the square root of A.",
+      "Display the result."
+    ]
+  },
+  {
+    "id": "calc3",
+    "name": "Percentage Calculator",
+    "description": "Calculates the percentage of a number.",
+    "formula": "Percentage = (A / B) × 100",
+    "example": "A = 25, B = 200 → (25 / 200) × 100 = 12.5%",
+    "steps": [
+      "Input the part value (A).",
+      "Input the total value (B).",
+      "Divide A by B.",
+      "Multiply the result by 100.",
+      "Display the percentage."
+    ]
+  },
+  {
+    "id": "calc4",
+    "name": "Simple Interest Calculator",
+    "description": "Calculates simple interest based on principal, rate, and time.",
+    "formula": "SI = (P × R × T) / 100",
+    "example": "P = 1000, R = 5%, T = 2 years → SI = 100",
+    "steps": [
+      "Input principal amount (P).",
+      "Input interest rate per annum (R).",
+      "Input time in years (T).",
+      "Apply the formula (P × R × T) / 100.",
+      "Display the result."
+    ]
+  },
+  {
+    "id": "calc5",
+    "name": "Area of Circle Calculator",
+    "description": "Calculates the area of a circle from its radius.",
+    "formula": "Area = π × r²",
+    "example": "r = 3 → Area = 3.1416 × 9 = 28.27",
+    "steps": [
+      "Input the radius (r).",
+      "Square the radius.",
+      "Multiply by π (approx. 3.1416).",
+      "Display the area."
+    ]
+  },
+  {
+    "id": "calc6",
+    "name": "BMI Calculator",
+    "description": "Calculates Body Mass Index using weight and height.",
+    "formula": "BMI = Weight (kg) / Height² (m²)",
+    "example": "Weight = 70kg, Height = 1.75m → BMI = 22.86",
+    "steps": [
+      "Input weight in kilograms.",
+      "Input height in meters.",
+      "Square the height.",
+      "Divide weight by height squared.",
+      "Display the BMI."
+    ]
+  },
+  {
+    "id": "calc7",
+    "name": "Temperature Converter (C to F)",
+    "description": "Converts temperature from Celsius to Fahrenheit.",
+    "formula": "F = (C × 9/5) + 32",
+    "example": "C = 25 → F = (25 × 9/5) + 32 = 77°F",
+    "steps": [
+      "Input the temperature in Celsius.",
+      "Multiply it by 9/5.",
+      "Add 32 to the result.",
+      "Display the temperature in Fahrenheit."
+    ]
+  },
+  {
+    "id": "calc8",
+    "name": "Area of Rectangle Calculator",
+    "description": "Calculates the area of a rectangle using length and width.",
+    "formula": "Area = Length × Width",
+    "example": "Length = 8, Width = 5 → Area = 40",
+    "steps": [
+      "Input the length.",
+      "Input the width.",
+      "Multiply length and width.",
+      "Display the area."
+    ]
+  },
+  {
+    "id": "calc9",
+    "name": "Volume of Cube Calculator",
+    "description": "Calculates the volume of a cube given the side length.",
+    "formula": "Volume = a³",
+    "example": "Side = 4 → Volume = 64",
+    "steps": [
+      "Input the side length (a).",
+      "Cube the side value (a × a × a).",
+      "Display the volume."
+    ]
+  },
+  {
+    "id": "calc10",
+    "name": "Speed Calculator",
+    "description": "Calculates speed using distance and time.",
+    "formula": "Speed = Distance / Time",
+    "example": "Distance = 100 km, Time = 2 hours → Speed = 50 km/h",
+    "steps": [
+      "Input the distance traveled.",
+      "Input the time taken.",
+      "Divide distance by time.",
+      "Display the speed."
+    ]
+  }
+]

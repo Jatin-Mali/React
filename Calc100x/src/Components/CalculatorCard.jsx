@@ -1,23 +1,19 @@
 import React from 'react';
 import './CalculatorCard.css';
-
+import CalcData from '../Data/CalculatorsData.json';
 const CalculatorCard = () => {
-  return (
-    <div className="calculator-card">
-      <div className="card-content">
-        <h2 className="card-title">Calculator Name</h2>
-        <p className="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
-      </div>
-      <div className="card-content">
-        <h2 className="card-title">Calculator Name</h2>
-        <p className="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
-      </div>
-      <div className="card-content">
-        <h2 className="card-title">Calculator Name</h2>
-        <p className="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
-      </div>
-    </div>
-  );
+    return (
+        <>
+            <div className="calculator-card" >
+                {CalcData.map((calc, index) => (
+                    <div className="card-content" key={index}>
+                        <h2 className="card-title">{calc.name}</h2>
+                        <p className="card-description">{calc.description}</p>
+                    </div>
+                ))}
+            </div>
+        </>
+    );
 };
 
 export default CalculatorCard;
