@@ -1,7 +1,7 @@
 [
   {
     "id": "calc1",
-    "name": "Basic Arithmetic Calculator",
+    "name": "Basic Calculator",
     "description": "Performs basic arithmetic operations: addition, subtraction, multiplication, and division.",
     "formula": [
       "Addition: A + B",
