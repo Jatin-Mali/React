@@ -10,7 +10,6 @@ export default function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="category" element={<Category/>}/>
         <Route path="about" element={<About/>}/>
       </Routes>
     </div>

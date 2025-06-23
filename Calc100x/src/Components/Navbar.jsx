@@ -12,7 +12,6 @@ const Navbar = () => {
                 <div className="pages">
                     <ul className='nav-links'>
                         <NavLink to="/" className='link'>Home</NavLink>
-                        <NavLink to="/category" className='link'>Categories</NavLink>
                         <NavLink to="/about" className='link'>About</NavLink>
                     </ul>
                 </div>
