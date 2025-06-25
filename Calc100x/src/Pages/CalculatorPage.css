@@ -23,6 +23,33 @@
   margin-bottom: 30px;
   max-width: 600px;
 }
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1500px;
+  gap: 24px;
+}
+
+/* Left Section */
+.left-section {
+  flex: 1;
+  max-width: 33%;
+}
+
+/* Center Section (for calculator UI) */
+.center-section {
+  flex: 1;
+  max-width: 33%;
+}
+
+/* Right Section (optional: can use later) */
+.right-section {
+  flex: 1;
+  max-width: 33%;
+}
 
 .left-bar {
   background-color: #ffffff;
