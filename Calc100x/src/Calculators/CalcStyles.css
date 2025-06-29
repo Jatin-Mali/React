@@ -1,0 +1,154 @@
+.calc-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  width: 90%;
+  margin: 20px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.calc-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #28C76F;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.shape-theme select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.shape-theme select:focus {
+  border-color: #28C76F;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.button-group button {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #28C76F;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group .reset {
+  background-color: #f44336;
+}
+
+.button-group button:hover {
+  opacity: 0.9;
+}
+
+.result-box {
+  margin-top: 20px;
+  background-color: #f0f8ff;
+  padding: 12px;
+  border-left: 4px solid #0077ff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.inline-form input {
+  width: 80px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.inline-result {
+  font-weight: bold;
+  color: #28C76F;
+  min-width: 60px;
+  display: inline-block;
+}
+
+.shape-theme h2 {
+  color: #28C76F;
+}
+
+.shape-theme ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.shape-theme li {
+  margin-bottom: 6px;
+}
+
+/* ✅ Mobile responsiveness */
+@media (max-width: 480px) {
+  .inline-form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .inline-form input {
+    width: 100%;
+  }
+
+  .inline-result {
+    min-width: auto;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+
+  .calc-container h2 {
+    font-size: 1.25rem;
+  }
+}
