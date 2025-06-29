@@ -11,7 +11,8 @@
       "Multiplication: 12 × 4 = 48",
       "Division: 12 ÷ 4 = 3"
     ],
-    "component": "BasicCalc"
+    "component": "BasicCalc",
+    "category": "General"
   },
   {
     "id": "calc2",
@@ -23,7 +24,8 @@
       "Find a number that squared equals 49.",
       "7 × 7 = 49, so √49 = 7."
     ],
-    "component": "SquareRootCalc"
+    "component": "SquareRootCalc",
+    "category": "General"
   },
   {
     "id": "calc3",
@@ -35,10 +37,12 @@
       "Divide part by whole: 25 ÷ 200 = 0.125.",
       "Multiply by 100: 0.125 × 100 = 12.5 %."
     ],
-    "component": "PercentageCalc"
+    "component": "PercentageCalc",
+    "category": "Finance"
   },
   {
     "id": "calc4",
+    "category": "Finance",
     "name": "Simple-Interest Calculator",
     "description": "Computes simple interest on a principal over time at a fixed annual rate.",
     "formula": "SI = (P × R × T) ÷ 100, where P = principal, R = annual interest rate (%), T = time in years.",
@@ -52,6 +56,7 @@
   },
   {
     "id": "calc5",
+    "category": "Geometry",
     "name": "Circle-Area Calculator",
     "description": "Finds the area of a circle from its radius.",
     "formula": "Area = π r², where r = radius (same units).",
@@ -64,6 +69,7 @@
   },
   {
     "id": "calc6",
+    "category": "Health",
     "name": "BMI Calculator",
     "description": "Evaluates Body-Mass Index from weight and height.",
     "formula": "BMI = Weight (kg) ÷ Height² (m²).",
@@ -77,6 +83,7 @@
   },
   {
     "id": "calc7",
+    "category": "Physics",
     "name": "Temperature Converter",
     "description": "Converts Celsius to Fahrenheit (or vice-versa).",
     "formula": "F = (C × 9/5) + 32  and  C = (F – 32) × 5/9.",
@@ -89,6 +96,7 @@
   },
   {
     "id": "calc8",
+    "category": "Physics",
     "name": "Speed / Distance / Time Calculator",
     "description": "Finds any one of speed, distance or time when two are known.",
     "formula": "Speed = Distance ÷ Time, Distance = Speed × Time, Time = Distance ÷ Speed.",
@@ -100,6 +108,7 @@
   },
   {
     "id": "calc9",
+    "category": "Finance",
     "name": "Compound-Interest Calculator",
     "description": "Computes future value with interest compounded at regular intervals.",
     "formula": "A = P (1 + r/n)^(n t), where P = principal, r = annual rate (decimal), n = compounds/year, t = years.",
@@ -114,6 +123,7 @@
   },
   {
     "id": "calc10",
+    "category": "Finance",
     "name": "Loan EMI Calculator",
     "description": "Finds fixed Equated Monthly Installment for a loan.",
     "formula": "EMI = [P r (1+r)^N] ÷ [(1+r)^N − 1], P = principal, r = monthly rate, N = number of months.",
@@ -129,6 +139,7 @@
   },
   {
     "id": "calc11",
+    "category": "Finance",
     "name": "CAGR Calculator",
     "description": "Computes compound annual growth rate between two values.",
     "formula": "CAGR = [(FV / PV)^(1/t) − 1] × 100 %, PV = initial value, FV = final value, t = years.",
@@ -143,6 +154,7 @@
   },
   {
     "id": "calc12",
+    "category": "Health",
     "name": "Body-Fat % Calculator (US Navy)",
     "description": "Estimates body-fat percentage using circumference method.",
     "formula": "Men: % BF = 495/(1.0324 − 0.19077 log(waist-neck) + 0.15456 log(height)) − 450.",
@@ -157,6 +169,7 @@
   },
   {
     "id": "calc13",
+    "category": "Health",
     "name": "BMR Calculator (Mifflin-St Jeor)",
     "description": "Calculates Basal Metabolic Rate (daily calories at rest).",
     "formula": "Men: BMR = 10 W + 6.25 H − 5 A + 5; Women: −161 instead of +5. W = weight kg, H = height cm, A = age yr.",
@@ -169,6 +182,7 @@
   },
   {
     "id": "calc14",
+    "category": "Health",
     "name": "Daily Calorie Needs (TDEE)",
     "description": "Finds Total Daily Energy Expenditure using BMR × activity factor.",
     "formula": "TDEE = BMR × Activity Factor (1.2 sedentary … 1.9 very active).",
@@ -180,6 +194,7 @@
   },
   {
     "id": "calc15",
+    "category": "Geometry",
     "name": "Rectangle-Area Calculator",
     "description": "Computes area and perimeter of a rectangle.",
     "formula": "Area = L × W, Perimeter = 2 (L + W).",
@@ -192,6 +207,7 @@
   },
   {
     "id": "calc16",
+    "category": "Geometry",
     "name": "Circle Circumference Calculator",
     "description": "Finds the circumference of a circle.",
     "formula": "C = 2 π r, where r is radius.",
@@ -203,6 +219,7 @@
   },
   {
     "id": "calc17",
+    "category": "Geometry",
     "name": "Triangle-Area (Heron) Calculator",
     "description": "Uses Heron’s formula to find area from three sides.",
     "formula": "Area = √[s(s−a)(s−b)(s−c)], where s = (a+b+c)/2.",
@@ -215,6 +232,7 @@
   },
   {
     "id": "calc18",
+    "category": "Geometry",
     "name": "Sphere Volume Calculator",
     "description": "Finds volume and surface area of a sphere.",
     "formula": "Volume = 4/3 π r³, Surface = 4 π r².",
@@ -227,6 +245,7 @@
   },
   {
     "id": "calc19",
+    "category": "Geometry",
     "name": "Cylinder Calculator",
     "description": "Computes volume and surface area of a right circular cylinder.",
     "formula": "Volume = π r² h, Surface = 2πr(r + h).",
@@ -239,6 +258,7 @@
   },
   {
     "id": "calc20",
+    "category": "Math",
     "name": "Quadratic-Equation Solver",
     "description": "Finds roots of ax²+bx+c=0 using quadratic formula.",
     "formula": "x = [−b ± √(b²−4ac)] ÷ (2a).",
@@ -252,6 +272,7 @@
   },
   {
     "id": "calc21",
+    "category": "Math",
     "name": "LCM Calculator",
     "description": "Finds least common multiple of two integers.",
     "formula": "LCM(a,b) = |a × b| ÷ GCD(a,b).",
@@ -264,6 +285,7 @@
   },
   {
     "id": "calc22",
+    "category": "Math",
     "name": "GCD (HCF) Calculator",
     "description": "Finds greatest common divisor of two integers via Euclidean algorithm.",
     "formula": "GCD(a,b): repeatedly replace larger by remainder until remainder 0.",
@@ -277,6 +299,7 @@
   },
   {
     "id": "calc23",
+    "category": "Math",
     "name": "Single-Event Probability",
     "description": "Computes probability of a favourable outcome.",
     "formula": "P = Favourable Outcomes ÷ Total Outcomes.",
@@ -290,6 +313,7 @@
   },
   {
     "id": "calc24",
+    "category": "Math",
     "name": "Permutation Calculator (nPr)",
     "description": "Counts ordered arrangements of r objects from n.",
     "formula": "nPr = n! ÷ (n − r)!",
@@ -302,6 +326,7 @@
   },
   {
     "id": "calc25",
+    "category": "Math",
     "name": "Combination Calculator (nCr)",
     "description": "Counts unordered selections of r objects from n.",
     "formula": "nCr = n! ÷ [r!(n − r)!]",
@@ -314,6 +339,7 @@
   },
   {
     "id": "calc26",
+    "category": "Math",
     "name": "Mean (Average) Calculator",
     "description": "Finds arithmetic mean of a data set.",
     "formula": "Mean = Σx ÷ n, where Σx = sum of values, n = count.",
@@ -327,6 +353,7 @@
   },
   {
     "id": "calc27",
+    "category": "Math",
     "name": "Standard-Deviation Calculator",
     "description": "Computes population standard deviation of data.",
     "formula": "σ = √[Σ(x − μ)² ÷ n], μ = mean.",
@@ -341,6 +368,7 @@
   },
   {
     "id": "calc28",
+    "category": "Physics",
     "name": "Ohm’s-Law Calculator",
     "description": "Relates voltage, current and resistance.",
     "formula": "V = I × R, I = V ÷ R, R = V ÷ I.",
@@ -352,6 +380,7 @@
   },
   {
     "id": "calc29",
+    "category": "Physics",
     "name": "Electrical-Power Calculator",
     "description": "Computes power from voltage and current.",
     "formula": "P = V × I, where V in volts, I in amperes, P in watts.",
@@ -363,6 +392,7 @@
   },
   {
     "id": "calc30",
+    "category": "Chemistry",
     "name": "Molarity Calculator",
     "description": "Finds solution molarity (mol/L).",
     "formula": "M = moles solute ÷ liters solution.",
@@ -374,6 +404,7 @@
   },
   {
     "id": "calc31",
+    "category": "Chemistry",
     "name": "Solution Dilution Calculator",
     "description": "Uses C₁V₁ = C₂V₂ to find final concentration or volume.",
     "formula": "C₁ V₁ = C₂ V₂, C = concentration, V = volume.",
@@ -386,6 +417,7 @@
   },
   {
     "id": "calc32",
+    "category": "Chemistry",
     "name": "Ideal Gas Law Calculator",
     "description": "Relates pressure, volume, moles, and temperature.",
     "formula": "PV = nRT, P in atm, V in L, n moles, R = 0.0821, T in Kelvin.",
@@ -397,6 +429,7 @@
   },
   {
     "id": "calc33",
+    "category": "Finance",
     "name": "Return-on-Investment Calculator",
     "description": "Measures profitability as percent gain.",
     "formula": "ROI = (Gain − Cost) ÷ Cost × 100 %.",

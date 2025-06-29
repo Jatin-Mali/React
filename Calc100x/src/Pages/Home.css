@@ -63,6 +63,15 @@
     color: #28C76F;
     transform: scale(1.1);
 }
+/* Add to Home.css */
+.category-dropdown {
+  padding: 8px 12px;
+  margin-left: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #f9f9f9;
+}
 
 .home-description {
     text-align: center;
