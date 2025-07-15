@@ -4,6 +4,7 @@
     "name": "Advanced Calculator",
     "description": "Performs basic arithmetic operations: addition, subtraction, multiplication, and division.",
     "formula": "Add: A + B, Subtract: A – B, Multiply: A × B, Divide: A ÷ B (A and B are real numbers).",
+    "expression": "A + B",
     "example": "A = 12, B = 4",
     "steps": [
       "Addition: 12 + 4 = 16",
@@ -12,33 +13,66 @@
       "Division: 12 ÷ 4 = 3"
     ],
     "component": "BasicCalc",
-    "category": "General"
+    "category": "General",
+    "fields": [
+      {
+        "name": "A",
+        "label": "First Number",
+        "type": "number"
+      },
+      {
+        "name": "B",
+        "label": "Second Number",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc2",
     "name": "Square-Root Calculator",
     "description": "Finds the principal (positive) square root of any non-negative number.",
     "formula": "√A = the number that, when multiplied by itself, equals A.",
+    "expression": "sqrt(A)",
     "example": "A = 49",
     "steps": [
       "Find a number that squared equals 49.",
       "7 × 7 = 49, so √49 = 7."
     ],
     "component": "SquareRootCalc",
-    "category": "General"
+    "category": "General",
+    "fields": [
+      {
+        "name": "A",
+        "label": "Number",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc3",
     "name": "Percentage Calculator",
     "description": "Calculates what percent one number is of another.",
     "formula": "Percentage = (Part ÷ Whole) × 100, where Part = A and Whole = B.",
+    "expression": "(A / B) * 100",
     "example": "A = 25, B = 200",
     "steps": [
       "Divide part by whole: 25 ÷ 200 = 0.125.",
       "Multiply by 100: 0.125 × 100 = 12.5 %."
     ],
     "component": "PercentageCalc",
-    "category": "Finance"
+    "category": "Finance",
+    "fields": [
+      {
+        "name": "A",
+        "label": "Part",
+        "type": "number"
+      },
+      {
+        "name": "B",
+        "label": "Whole",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc4",
@@ -46,13 +80,31 @@
     "name": "Simple-Interest Calculator",
     "description": "Computes simple interest on a principal over time at a fixed annual rate.",
     "formula": "SI = (P × R × T) ÷ 100, where P = principal, R = annual interest rate (%), T = time in years.",
+    "expression": "(P * R * T) / 100",
     "example": "P = ₹1000, R = 5 %, T = 2 yr",
     "steps": [
       "Multiply: P × R × T = 1000 × 5 × 2 = 10 000.",
       "Divide by 100: 10 000 ÷ 100 = 100.",
       "Simple Interest = ₹100; Total Amount = 1000 + 100 = ₹1100."
     ],
-    "component": "SimpleInterestCalc"
+    "component": "SimpleInterestCalc",
+    "fields": [
+      {
+        "name": "P",
+        "label": "Principal Amount",
+        "type": "number"
+      },
+      {
+        "name": "R",
+        "label": "Annual Interest Rate (%)",
+        "type": "number"
+      },
+      {
+        "name": "T",
+        "label": "Time (Years)",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc5",
@@ -60,12 +112,20 @@
     "name": "Circle-Area Calculator",
     "description": "Finds the area of a circle from its radius.",
     "formula": "Area = π r², where r = radius (same units).",
+    "expression": "pi * pow(r, 2)",
     "example": "r = 3 cm",
     "steps": [
       "Square the radius: 3² = 9.",
       "Multiply by π (≈3.1416): 9 × 3.1416 ≈ 28.27 cm²."
     ],
-    "component": "ShapeCalculator"
+    "component": "ShapeCalculator",
+    "fields": [
+      {
+        "name": "r",
+        "label": "Radius",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc6",
@@ -73,13 +133,26 @@
     "name": "BMI Calculator",
     "description": "Evaluates Body-Mass Index from weight and height.",
     "formula": "BMI = Weight (kg) ÷ Height² (m²).",
+    "expression": "weight / pow(height, 2)",
     "example": "Weight = 70 kg, Height = 1.75 m",
     "steps": [
       "Square height: 1.75² = 3.0625.",
       "Divide weight by height²: 70 ÷ 3.0625 = 22.86.",
       "Interpretation: BMI 22.9 = Normal weight."
     ],
-    "component": "BMICalc"
+    "component": "BMICalc",
+    "fields": [
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number"
+      },
+      {
+        "name": "height",
+        "label": "Height (m)",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc7",
@@ -87,12 +160,29 @@
     "name": "Temperature Converter",
     "description": "Converts Celsius to Fahrenheit (or vice-versa).",
     "formula": "F = (C × 9/5) + 32  and  C = (F – 32) × 5/9.",
+    "expression": {
+      "Celsius": "(temperature * 9/5) + 32",
+      "Fahrenheit": "(temperature - 32) * 5/9"
+    },
     "example": "C = 25 °C",
     "steps": [
       "Multiply by 9/5: 25 × 1.8 = 45.",
       "Add 32: 45 + 32 = 77 °F."
     ],
-    "component": "TemperatureConverterCalc"
+    "component": "TemperatureConverterCalc",
+    "fields": [
+      {
+        "name": "temperature",
+        "label": "Temperature Value",
+        "type": "number"
+      },
+      {
+        "name": "unit",
+        "label": "Convert From",
+        "type": "select",
+        "options": ["Celsius", "Fahrenheit"]
+      }
+    ]
   },
   {
     "id": "calc8",
@@ -100,11 +190,34 @@
     "name": "Speed / Distance / Time Calculator",
     "description": "Finds any one of speed, distance or time when two are known.",
     "formula": "Speed = Distance ÷ Time, Distance = Speed × Time, Time = Distance ÷ Speed.",
+    "expression": {
+      "Speed": "value1 / value2",
+      "Distance": "value1 * value2",
+      "Time": "value1 / value2"
+    },
     "example": "Distance = 150 km, Time = 3 h",
     "steps": [
       "Speed = 150 ÷ 3 = 50 km/h."
     ],
-    "component": "SpeedCalc"
+    "component": "SpeedCalc",
+    "fields": [
+      {
+        "name": "calculate",
+        "label": "Calculate",
+        "type": "select",
+        "options": ["Speed", "Distance", "Time"]
+      },
+      {
+        "name": "value1",
+        "label": "Known Value 1",
+        "type": "number"
+      },
+      {
+        "name": "value2",
+        "label": "Known Value 2",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc9",
@@ -112,6 +225,7 @@
     "name": "Compound-Interest Calculator",
     "description": "Computes future value with interest compounded at regular intervals.",
     "formula": "A = P (1 + r/n)^(n t), where P = principal, r = annual rate (decimal), n = compounds/year, t = years.",
+    "expression": "P * pow(1 + (r/100)/n, n * t)",
     "example": "P = ₹5000, r = 6 % (0.06), n = 4, t = 5 yr",
     "steps": [
       "Compute 1 + r/n: 1 + 0.06/4 = 1.015.",
@@ -119,7 +233,29 @@
       "Multiply by P: 5000 × 1.3469 ≈ ₹6734.50.",
       "CI = 6734.50 − 5000 = ₹1734.50."
     ],
-    "component": "CompoundInterestCalc"
+    "component": "CompoundInterestCalc",
+    "fields": [
+      {
+        "name": "P",
+        "label": "Principal Amount",
+        "type": "number"
+      },
+      {
+        "name": "r",
+        "label": "Annual Interest Rate (%)",
+        "type": "number"
+      },
+      {
+        "name": "n",
+        "label": "Compounds per Year",
+        "type": "number"
+      },
+      {
+        "name": "t",
+        "label": "Time (Years)",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc10",
@@ -127,6 +263,7 @@
     "name": "Loan EMI Calculator",
     "description": "Finds fixed Equated Monthly Installment for a loan.",
     "formula": "EMI = [P r (1+r)^N] ÷ [(1+r)^N − 1], P = principal, r = monthly rate, N = number of months.",
+    "expression": "(P * (rate/1200) * pow(1 + rate/1200, N)) / (pow(1 + rate/1200, N) - 1)",
     "example": "P = ₹3 00 000, annual rate 8 % → r = 0.08/12, N = 60",
     "steps": [
       "r = 0.08/12 = 0.006667.",
@@ -135,7 +272,24 @@
       "Denominator: 1.489 − 1 = 0.489.",
       "EMI = 2980 ÷ 0.489 ≈ ₹6096 per month."
     ],
-    "component": "LoanEmiCalc"
+    "component": "LoanEmiCalc",
+    "fields": [
+      {
+        "name": "P",
+        "label": "Principal Amount",
+        "type": "number"
+      },
+      {
+        "name": "rate",
+        "label": "Annual Interest Rate (%)",
+        "type": "number"
+      },
+      {
+        "name": "N",
+        "label": "Loan Term (Months)",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc11",
@@ -143,6 +297,7 @@
     "name": "CAGR Calculator",
     "description": "Computes compound annual growth rate between two values.",
     "formula": "CAGR = [(FV / PV)^(1/t) − 1] × 100 %, PV = initial value, FV = final value, t = years.",
+    "expression": "(pow(FV / PV, 1/t) - 1) * 100",
     "example": "PV = ₹10 000, FV = ₹18 000, t = 3",
     "steps": [
       "FV ÷ PV = 18000 ÷ 10000 = 1.8.",
@@ -150,7 +305,24 @@
       "Subtract 1: 0.216.",
       "Convert to %: 0.216 × 100 = 21.6 % CAGR."
     ],
-    "component": "CagrCalc"
+    "component": "CagrCalc",
+    "fields": [
+      {
+        "name": "PV",
+        "label": "Initial Value",
+        "type": "number"
+      },
+      {
+        "name": "FV",
+        "label": "Final Value",
+        "type": "number"
+      },
+      {
+        "name": "t",
+        "label": "Time (Years)",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc12",
@@ -158,6 +330,10 @@
     "name": "Body-Fat % Calculator (US Navy)",
     "description": "Estimates body-fat percentage using circumference method.",
     "formula": "Men: % BF = 495/(1.0324 − 0.19077 log(waist-neck) + 0.15456 log(height)) − 450.",
+    "expression": {
+      "Male": "495 / (1.0324 - 0.19077 * log10(waist - neck) + 0.15456 * log10(height)) - 450",
+      "Female": "495 / (1.29579 - 0.35004 * log10(waist + hip - neck) + 0.22100 * log10(height)) - 450"
+    },
     "example": "Waist 85 cm, Neck 40 cm, Height 180 cm",
     "steps": [
       "log(waist-neck) = log(45) = 1.653.",
@@ -165,7 +341,35 @@
       "Plug values ⇒ denominator = 1.0324 − 0.19077×1.653 + 0.15456×2.255 ≈ 1.022.",
       "495/1.022 − 450 ≈ 34.5 % body-fat."
     ],
-    "component": "BodyFatCalc"
+    "component": "BodyFatCalc",
+    "fields": [
+      {
+        "name": "gender",
+        "label": "Gender",
+        "type": "select",
+        "options": ["Male", "Female"]
+      },
+      {
+        "name": "waist",
+        "label": "Waist Circumference (cm)",
+        "type": "number"
+      },
+      {
+        "name": "neck",
+        "label": "Neck Circumference (cm)",
+        "type": "number"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "type": "number"
+      },
+      {
+        "name": "hip",
+        "label": "Hip Circumference (cm) - Women only",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc13",
@@ -173,12 +377,39 @@
     "name": "BMR Calculator (Mifflin-St Jeor)",
     "description": "Calculates Basal Metabolic Rate (daily calories at rest).",
     "formula": "Men: BMR = 10 W + 6.25 H − 5 A + 5; Women: −161 instead of +5. W = weight kg, H = height cm, A = age yr.",
+    "expression": {
+      "Male": "10 * weight + 6.25 * height - 5 * age + 5",
+      "Female": "10 * weight + 6.25 * height - 5 * age - 161"
+    },
     "example": "Male, 70 kg, 175 cm, 25 yr",
     "steps": [
       "10W = 700, 6.25H = 1094, −5A = −125.",
       "Sum: 700 + 1094 − 125 + 5 = 1674 kcal/day."
     ],
-    "component": "BmrCalc"
+    "component": "BmrCalc",
+    "fields": [
+      {
+        "name": "gender",
+        "label": "Gender",
+        "type": "select",
+        "options": ["Male", "Female"]
+      },
+      {
+        "name": "weight",
+        "label": "Weight (kg)",
+        "type": "number"
+      },
+      {
+        "name": "height",
+        "label": "Height (cm)",
+        "type": "number"
+      },
+      {
+        "name": "age",
+        "label": "Age (years)",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc14",
@@ -186,11 +417,31 @@
     "name": "Daily Calorie Needs (TDEE)",
     "description": "Finds Total Daily Energy Expenditure using BMR × activity factor.",
     "formula": "TDEE = BMR × Activity Factor (1.2 sedentary … 1.9 very active).",
+    "expression": {
+      "Sedentary (1.2)": "BMR * 1.2",
+      "Lightly Active (1.375)": "BMR * 1.375",
+      "Moderately Active (1.55)": "BMR * 1.55",
+      "Very Active (1.725)": "BMR * 1.725",
+      "Super Active (1.9)": "BMR * 1.9"
+    },
     "example": "BMR 1674 kcal, Factor 1.55 (moderately active)",
     "steps": [
       "Multiply: 1674 × 1.55 ≈ 2595 kcal/day."
     ],
-    "component": "TdeeCalc"
+    "component": "TdeeCalc",
+    "fields": [
+      {
+        "name": "BMR",
+        "label": "Basal Metabolic Rate (kcal/day)",
+        "type": "number"
+      },
+      {
+        "name": "activityLevel",
+        "label": "Activity Level",
+        "type": "select",
+        "options": ["Sedentary (1.2)", "Lightly Active (1.375)", "Moderately Active (1.55)", "Very Active (1.725)", "Super Active (1.9)"]
+      }
+    ]
   },
   {
     "id": "calc15",
@@ -198,12 +449,25 @@
     "name": "Rectangle-Area Calculator",
     "description": "Computes area and perimeter of a rectangle.",
     "formula": "Area = L × W, Perimeter = 2 (L + W).",
+    "expression": "L * W",
     "example": "L = 8 m, W = 5 m",
     "steps": [
       "Area: 8 × 5 = 40 m².",
       "Perimeter: 2 (8+5) = 26 m."
     ],
-    "component": "RectangleAreaCalc"
+    "component": "RectangleAreaCalc",
+    "fields": [
+      {
+        "name": "L",
+        "label": "Length",
+        "type": "number"
+      },
+      {
+        "name": "W",
+        "label": "Width",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc16",
@@ -211,24 +475,50 @@
     "name": "Circle Circumference Calculator",
     "description": "Finds the circumference of a circle.",
     "formula": "C = 2 π r, where r is radius.",
+    "expression": "2 * pi * r",
     "example": "r = 3 cm",
     "steps": [
       "2 × π × 3 ≈ 18.85 cm."
     ],
-    "component": "CircleCircumferenceCalc"
+    "component": "CircleCircumferenceCalc",
+    "fields": [
+      {
+        "name": "r",
+        "label": "Radius",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc17",
     "category": "Geometry",
     "name": "Triangle-Area (Heron) Calculator",
-    "description": "Uses Heron’s formula to find area from three sides.",
+    "description": "Uses Heron's formula to find area from three sides.",
     "formula": "Area = √[s(s−a)(s−b)(s−c)], where s = (a+b+c)/2.",
+    "expression": "sqrt(((a+b+c)/2) * (((a+b+c)/2) - a) * (((a+b+c)/2) - b) * (((a+b+c)/2) - c))",
     "example": "a=3, b=4, c=5",
     "steps": [
       "s = (3+4+5)/2 = 6.",
       "Area = √[6×3×2×1] = √36 = 6 units²."
     ],
-    "component": "TriangleAreaCalc"
+    "component": "TriangleAreaCalc",
+    "fields": [
+      {
+        "name": "a",
+        "label": "Side A",
+        "type": "number"
+      },
+      {
+        "name": "b",
+        "label": "Side B",
+        "type": "number"
+      },
+      {
+        "name": "c",
+        "label": "Side C",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc18",
@@ -236,12 +526,20 @@
     "name": "Sphere Volume Calculator",
     "description": "Finds volume and surface area of a sphere.",
     "formula": "Volume = 4/3 π r³, Surface = 4 π r².",
+    "expression": "(4/3) * pi * pow(r, 3)",
     "example": "r = 2 cm",
     "steps": [
       "Volume: 4/3 × π × 8 ≈ 33.51 cm³.",
       "Surface: 4 × π × 4 ≈ 50.27 cm²."
     ],
-    "component": "SphereVolumeCalc"
+    "component": "SphereVolumeCalc",
+    "fields": [
+      {
+        "name": "r",
+        "label": "Radius",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc19",
@@ -249,12 +547,25 @@
     "name": "Cylinder Calculator",
     "description": "Computes volume and surface area of a right circular cylinder.",
     "formula": "Volume = π r² h, Surface = 2πr(r + h).",
+    "expression": "pi * pow(r, 2) * h",
     "example": "r = 3 cm, h = 10 cm",
     "steps": [
       "Volume: π × 9 × 10 ≈ 282.74 cm³.",
       "Surface: 2π × 3 × (3+10) = 2π × 3 × 13 ≈ 245.04 cm²."
     ],
-    "component": "CylinderCalc"
+    "component": "CylinderCalc",
+    "fields": [
+      {
+        "name": "r",
+        "label": "Radius",
+        "type": "number"
+      },
+      {
+        "name": "h",
+        "label": "Height",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc20",
@@ -262,13 +573,31 @@
     "name": "Quadratic-Equation Solver",
     "description": "Finds roots of ax²+bx+c=0 using quadratic formula.",
     "formula": "x = [−b ± √(b²−4ac)] ÷ (2a).",
+    "expression": "(-b + sqrt(pow(b, 2) - 4 * a * c)) / (2 * a)",
     "example": "2x² − 7x + 3 = 0",
     "steps": [
       "a=2, b=−7, c=3.",
       "Discriminant D = (−7)² − 4×2×3 = 49 − 24 = 25.",
       "Roots: (7 ± 5)/4 ⇒ x₁ = 3, x₂ = 0.5."
     ],
-    "component": "QuadraticCalc"
+    "component": "QuadraticCalc",
+    "fields": [
+      {
+        "name": "a",
+        "label": "Coefficient a",
+        "type": "number"
+      },
+      {
+        "name": "b",
+        "label": "Coefficient b",
+        "type": "number"
+      },
+      {
+        "name": "c",
+        "label": "Coefficient c",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc21",
@@ -276,12 +605,25 @@
     "name": "LCM Calculator",
     "description": "Finds least common multiple of two integers.",
     "formula": "LCM(a,b) = |a × b| ÷ GCD(a,b).",
+    "expression": "abs(a * b) / gcd(a, b)",
     "example": "a = 12, b = 18",
     "steps": [
       "GCD(12,18) = 6.",
       "LCM = |12×18| ÷ 6 = 216 ÷ 6 = 36."
     ],
-    "component": "LcmCalc"
+    "component": "LcmCalc",
+    "fields": [
+      {
+        "name": "a",
+        "label": "First Number",
+        "type": "number"
+      },
+      {
+        "name": "b",
+        "label": "Second Number",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc22",
@@ -289,13 +631,26 @@
     "name": "GCD (HCF) Calculator",
     "description": "Finds greatest common divisor of two integers via Euclidean algorithm.",
     "formula": "GCD(a,b): repeatedly replace larger by remainder until remainder 0.",
+    "expression": "gcd(a, b)",
     "example": "a=56, b=98",
     "steps": [
       "98 mod 56 = 42.",
       "56 mod 42 = 14.",
       "42 mod 14 = 0 ⇒ GCD = 14."
     ],
-    "component": "GcdCalc"
+    "component": "GcdCalc",
+    "fields": [
+      {
+        "name": "a",
+        "label": "First Number",
+        "type": "number"
+      },
+      {
+        "name": "b",
+        "label": "Second Number",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc23",
@@ -303,13 +658,26 @@
     "name": "Single-Event Probability",
     "description": "Computes probability of a favourable outcome.",
     "formula": "P = Favourable Outcomes ÷ Total Outcomes.",
+    "expression": "favorable / total",
     "example": "Rolling a die: P(roll 4) = 1/6 ≈ 0.1667",
     "steps": [
       "Favourable outcomes = 1.",
       "Total outcomes = 6.",
       "Probability = 1 ÷ 6 ≈ 0.1667 or 16.67 %."
     ],
-    "component": "ProbabilityCalc"
+    "component": "ProbabilityCalc",
+    "fields": [
+      {
+        "name": "favorable",
+        "label": "Favorable Outcomes",
+        "type": "number"
+      },
+      {
+        "name": "total",
+        "label": "Total Outcomes",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc24",
@@ -317,12 +685,25 @@
     "name": "Permutation Calculator (nPr)",
     "description": "Counts ordered arrangements of r objects from n.",
     "formula": "nPr = n! ÷ (n − r)!",
+    "expression": "n! / (n - r)!",
     "example": "n = 5, r = 2",
     "steps": [
       "5! = 120, (5−2)! = 6.",
       "120 ÷ 6 = 20 permutations."
     ],
-    "component": "PermutationCalc"
+    "component": "PermutationCalc",
+    "fields": [
+      {
+        "name": "n",
+        "label": "Total Objects (n)",
+        "type": "number"
+      },
+      {
+        "name": "r",
+        "label": "Objects to Arrange (r)",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc25",
@@ -330,12 +711,25 @@
     "name": "Combination Calculator (nCr)",
     "description": "Counts unordered selections of r objects from n.",
     "formula": "nCr = n! ÷ [r!(n − r)!]",
+    "expression": "n! / (r! * (n - r)!)",
     "example": "n=5, r=2",
     "steps": [
       "nPr (5P2) = 20.",
       "Divide by r! = 20 ÷ 2 = 10 combinations."
     ],
-    "component": "CombinationCalc"
+    "component": "CombinationCalc",
+    "fields": [
+      {
+        "name": "n",
+        "label": "Total Objects (n)",
+        "type": "number"
+      },
+      {
+        "name": "r",
+        "label": "Objects to Select (r)",
+        "type": "number"
+      }
+    ]
   },
   {
     "id": "calc26",
@@ -343,102 +737,302 @@
     "name": "Mean (Average) Calculator",
     "description": "Finds arithmetic mean of a data set.",
     "formula": "Mean = Σx ÷ n, where Σx = sum of values, n = count.",
+    "expression": "sum(data) / length(data)",
     "example": "Data: 4, 8, 6, 2",
     "steps": [
       "Sum: 4+8+6+2 = 20.",
       "n = 4.",
       "Mean = 20 ÷ 4 = 5."
     ],
-    "component": "MeanCalc"
+    "component": "MeanCalc",
+    "fields": [
+      {
+        "name": "data",
+        "label": "Data Values (comma-separated)",
+        "type": "text"
+      }
+    ]
   },
-  {
-    "id": "calc27",
-    "category": "Math",
-    "name": "Standard-Deviation Calculator",
-    "description": "Computes population standard deviation of data.",
-    "formula": "σ = √[Σ(x − μ)² ÷ n], μ = mean.",
-    "example": "Data 2, 4, 4, 4, 5, 5, 7, 9",
-    "steps": [
-      "Mean μ = 5.",
-      "Sum squared deviations Σ(x−μ)² = 32.",
-      "n = 8.",
-      "σ = √(32/8) = √4 = 2."
-    ],
-    "component": "StdDevCalc"
-  },
-  {
-    "id": "calc28",
-    "category": "Physics",
-    "name": "Ohm’s-Law Calculator",
-    "description": "Relates voltage, current and resistance.",
-    "formula": "V = I × R, I = V ÷ R, R = V ÷ I.",
-    "example": "V = 12 V, R = 4 Ω",
-    "steps": [
-      "I = V ÷ R = 12 ÷ 4 = 3 A."
-    ],
-    "component": "OhmsLawCalc"
-  },
-  {
-    "id": "calc29",
-    "category": "Physics",
-    "name": "Electrical-Power Calculator",
-    "description": "Computes power from voltage and current.",
-    "formula": "P = V × I, where V in volts, I in amperes, P in watts.",
-    "example": "V = 230 V, I = 2 A → P = 460 W",
-    "steps": [
-      "Multiply 230 × 2 = 460 W."
-    ],
-    "component": "PowerCalc"
-  },
-  {
-    "id": "calc30",
-    "category": "Chemistry",
-    "name": "Molarity Calculator",
-    "description": "Finds solution molarity (mol/L).",
-    "formula": "M = moles solute ÷ liters solution.",
-    "example": "0.5 mol in 0.25 L",
-    "steps": [
-      "Divide: 0.5 ÷ 0.25 = 2 M."
-    ],
-    "component": "MolarityCalc"
-  },
-  {
-    "id": "calc31",
-    "category": "Chemistry",
-    "name": "Solution Dilution Calculator",
-    "description": "Uses C₁V₁ = C₂V₂ to find final concentration or volume.",
-    "formula": "C₁ V₁ = C₂ V₂, C = concentration, V = volume.",
-    "example": "Stock 1 M, need 0.1 M, final volume 100 mL",
-    "steps": [
-      "V₁ = C₂ V₂ ÷ C₁ = 0.1×100 ÷ 1 = 10 mL stock.",
-      "Add solvent to reach 100 mL."
-    ],
-    "component": "DilutionCalc"
-  },
-  {
-    "id": "calc32",
-    "category": "Chemistry",
-    "name": "Ideal Gas Law Calculator",
-    "description": "Relates pressure, volume, moles, and temperature.",
-    "formula": "PV = nRT, P in atm, V in L, n moles, R = 0.0821, T in Kelvin.",
-    "example": "n = 1 mol, T = 300 K, P = 2 atm → V = ?",
-    "steps": [
-      "V = nRT ÷ P = 1×0.0821×300 ÷ 2 ≈ 12.315 L."
-    ],
-    "component": "IdealGasCalc"
-  },
-  {
-    "id": "calc33",
-    "category": "Finance",
-    "name": "Return-on-Investment Calculator",
-    "description": "Measures profitability as percent gain.",
-    "formula": "ROI = (Gain − Cost) ÷ Cost × 100 %.",
-    "example": "Cost = ₹5000, Gain = ₹6500",
-    "steps": [
-      "Gain − Cost = 1500.",
-      "Divide by cost: 1500 ÷ 5000 = 0.3.",
-      "Convert to %: 0.3 × 100 = 30 % ROI."
-    ],
-    "component": "RoiCalc"
-  }
+{
+  "id": "calc27",
+  "category": "Math",
+  "name": "Median Calculator",
+  "description": "Finds the middle value in a sorted list of numbers.",
+  "formula": "Odd n: Median = middle value; Even n: Median = average of two middle values.",
+  "expression": "sort(data) → median based on length",
+  "example": "Data: 3, 5, 7 → Median = 5; Data: 2, 4, 6, 8 → Median = (4+6)/2 = 5",
+  "steps": [
+    "Sort the data: e.g., [2, 4, 6, 8].",
+    "n = 4 (even), two middle numbers = 4, 6.",
+    "Median = (4 + 6)/2 = 5."
+  ],
+  "component": "MedianCalc",
+  "fields": [
+    {
+      "name": "data",
+      "label": "Data Values (comma-separated)",
+      "type": "text"
+    }
+  ]
+},
+{
+  "id": "calc28",
+  "category": "Math",
+  "name": "Mode Calculator",
+  "description": "Finds the most frequent value(s) in a dataset.",
+  "formula": "Mode = value(s) that appear most often.",
+  "expression": "frequency count of data values",
+  "example": "Data: 2, 4, 4, 6, 6, 6 → Mode = 6",
+  "steps": [
+    "Count frequencies: 6 appears 3 times.",
+    "Other values appear fewer times.",
+    "Mode = 6."
+  ],
+  "component": "ModeCalc",
+  "fields": [
+    {
+      "name": "data",
+      "label": "Data Values (comma-separated)",
+      "type": "text"
+    }
+  ]
+},
+{
+  "id": "calc29",
+  "category": "Math",
+  "name": "Standard Deviation Calculator",
+  "description": "Computes standard deviation (σ) of a dataset.",
+  "formula": "σ = sqrt(Σ(xi - μ)² / n), where μ is mean.",
+  "expression": "sqrt(sum((xi - mean)^2) / n)",
+  "example": "Data: 2, 4, 4, 4, 5, 5, 7, 9",
+  "steps": [
+    "Mean = 5.",
+    "Compute squared deviations, then average and take sqrt.",
+    "σ ≈ 2.0."
+  ],
+  "component": "StdDevCalc",
+  "fields": [
+    {
+      "name": "data",
+      "label": "Data Values (comma-separated)",
+      "type": "text"
+    }
+  ]
+},
+{
+  "id": "calc30",
+  "category": "Math",
+  "name": "Z-Score Calculator",
+  "description": "Calculates how many standard deviations a value is from the mean.",
+  "formula": "z = (X - μ) / σ",
+  "expression": "(X - mean) / stdDev",
+  "example": "X = 80, μ = 70, σ = 5 → z = 2",
+  "steps": [
+    "Subtract mean: 80 - 70 = 10.",
+    "Divide by std dev: 10 / 5 = 2.",
+    "Z-score = 2."
+  ],
+  "component": "ZScoreCalc",
+  "fields": [
+    {
+      "name": "X",
+      "label": "Value (X)",
+      "type": "number"
+    },
+    {
+      "name": "mean",
+      "label": "Mean (μ)",
+      "type": "number"
+    },
+    {
+      "name": "stdDev",
+      "label": "Standard Deviation (σ)",
+      "type": "number"
+    }
+  ]
+},
+{
+  "id": "calc31",
+  "category": "Math",
+  "name": "Exponentiation Calculator",
+  "description": "Computes A raised to the power of B.",
+  "formula": "Result = A^B",
+  "expression": "pow(A, B)",
+  "example": "A = 2, B = 3 → 2^3 = 8",
+  "steps": [
+    "Raise base A to exponent B: 2^3 = 8."
+  ],
+  "component": "ExponentCalc",
+  "fields": [
+    {
+      "name": "A",
+      "label": "Base (A)",
+      "type": "number"
+    },
+    {
+      "name": "B",
+      "label": "Exponent (B)",
+      "type": "number"
+    }
+  ]
+},
+{
+  "id": "calc32",
+  "category": "Math",
+  "name": "Logarithm Calculator",
+  "description": "Computes the logarithm of a number with a given base.",
+  "formula": "logₐ(B) = x ⇒ a^x = B",
+  "expression": "log(B) / log(A)",
+  "example": "Base = 10, Number = 1000 → log₁₀(1000) = 3",
+  "steps": [
+    "log₁₀(1000) = 3 since 10³ = 1000."
+  ],
+  "component": "LogCalc",
+  "fields": [
+    {
+      "name": "A",
+      "label": "Base",
+      "type": "number"
+    },
+    {
+      "name": "B",
+      "label": "Number",
+      "type": "number"
+    }
+  ]
+},
+{
+  "id": "calc33",
+  "category": "Finance",
+  "name": "Savings Goal Calculator",
+  "description": "Estimates required monthly savings to reach a goal amount.",
+  "formula": "PMT = FV × [r / ((1 + r)^n − 1)], where r = monthly rate, n = months.",
+  "expression": "FV * (r / (pow(1 + r, n) - 1))",
+  "example": "FV = ₹1,00,000, r = 0.005, n = 12",
+  "steps": [
+    "Monthly Rate = r = 0.005",
+    "PMT = 100000 × [0.005 / ((1.005)^12 - 1)] ≈ ₹7,958"
+  ],
+  "component": "SavingsGoalCalc",
+  "fields": [
+    {
+      "name": "FV",
+      "label": "Future Value (Goal Amount)",
+      "type": "number"
+    },
+    {
+      "name": "r",
+      "label": "Monthly Interest Rate (Decimal)",
+      "type": "number"
+    },
+    {
+      "name": "n",
+      "label": "Months",
+      "type": "number"
+    }
+  ]
+},
+{
+  "id": "calc34",
+  "category": "Finance",
+  "name": "Discount Calculator",
+  "description": "Calculates discount and final price after discount.",
+  "formula": "Discount = MRP × (D ÷ 100), Final Price = MRP − Discount.",
+  "expression": "MRP - (MRP * D / 100)",
+  "example": "MRP = ₹200, D = 20%",
+  "steps": [
+    "Discount = 200 × 0.20 = ₹40.",
+    "Final Price = 200 − 40 = ₹160."
+  ],
+  "component": "DiscountCalc",
+  "fields": [
+    {
+      "name": "MRP",
+      "label": "Original Price (MRP)",
+      "type": "number"
+    },
+    {
+      "name": "D",
+      "label": "Discount (%)",
+      "type": "number"
+    }
+  ]
+},
+{
+  "id": "calc35",
+  "category": "Physics",
+  "name": "Work-Energy Calculator",
+  "description": "Calculates work done when force is applied over distance.",
+  "formula": "W = F × d, where F = force in newtons, d = distance in meters.",
+  "expression": "F * d",
+  "example": "F = 20 N, d = 5 m → W = 100 J",
+  "steps": [
+    "Multiply force by distance: 20 × 5 = 100 J"
+  ],
+  "component": "WorkEnergyCalc",
+  "fields": [
+    {
+      "name": "F",
+      "label": "Force (N)",
+      "type": "number"
+    },
+    {
+      "name": "d",
+      "label": "Distance (m)",
+      "type": "number"
+    }
+  ]
+},
+{
+  "id": "calc36",
+  "category": "Physics",
+  "name": "Kinetic Energy Calculator",
+  "description": "Computes kinetic energy of an object in motion.",
+  "formula": "KE = 0.5 × m × v², m = mass (kg), v = velocity (m/s).",
+  "expression": "0.5 * m * pow(v, 2)",
+  "example": "m = 2 kg, v = 3 m/s → KE = 9 J",
+  "steps": [
+    "v² = 3² = 9.",
+    "KE = 0.5 × 2 × 9 = 9 J."
+  ],
+  "component": "KineticEnergyCalc",
+  "fields": [
+    {
+      "name": "m",
+      "label": "Mass (kg)",
+      "type": "number"
+    },
+    {
+      "name": "v",
+      "label": "Velocity (m/s)",
+      "type": "number"
+    }
+  ]
+},
+{
+  "id": "calc37",
+  "category": "Physics",
+  "name": "Potential Energy Calculator",
+  "description": "Computes gravitational potential energy.",
+  "formula": "PE = m × g × h, where g = 9.8 m/s² (earth gravity).",
+  "expression": "m * 9.8 * h",
+  "example": "m = 5 kg, h = 10 m → PE = 490 J",
+  "steps": [
+    "PE = 5 × 9.8 × 10 = 490 J."
+  ],
+  "component": "PotentialEnergyCalc",
+  "fields": [
+    {
+      "name": "m",
+      "label": "Mass (kg)",
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "label": "Height (m)",
+      "type": "number"
+    }
+  ]
+}
 ]
+

@@ -1,0 +1,172 @@
+.about-container {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  color: #28C76F;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 700px;
+  margin: auto;
+}
+
+.about-section {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #28C76F;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #28C76F;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #444;
+  max-width: 850px;
+  margin: 10px auto;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #28C76F;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.member-name {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.member-role {
+  font-size: 1rem;
+  color: #777;
+}
+
+.member-bio {
+  max-width: 600px;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.feedback-form {
+  text-align: center;
+}
+
+.form {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #28C76F;
+  outline: none;
+  box-shadow: 0 0 6px rgba(40, 199, 111, 0.2);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #28C76F;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #22b861;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-text,
+  .member-bio {
+    font-size: 1rem;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+}
