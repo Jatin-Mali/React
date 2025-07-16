@@ -1,7 +1,7 @@
 .calculator-page {
   padding: 32px;
   font-family: 'Segoe UI', Roboto, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #FBF7F4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
 .calculator-title {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #2e86de;
+  color: #28C76F;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -42,14 +42,13 @@
 /* Center Section (for calculator UI) */
 .center-section {
   flex: 1;
-  max-width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 /* Right Section (optional: can use later) */
-.right-section {
-  flex: 1;
-  max-width: 33%;
-}
+
 
 .left-bar {
   background-color: #ffffff;
@@ -96,4 +95,65 @@
 .steps li {
   margin-bottom: 8px;
   line-height: 1.5;
+}
+
+
+.calculator-box {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calculator-box label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.calculator-box input, 
+.calculator-box select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.calculator-box input:focus,
+.calculator-box select:focus {
+  border-color: #28C76F;
+}
+
+.calculator-box button {
+  padding: 12px;
+  background-color: #28C76F;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calculator-box button:hover {
+  background-color: #28C76F;
+}
+
+.calculator-output {
+  background-color: #f3f7fa;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #222;
+  text-align: center;
 }

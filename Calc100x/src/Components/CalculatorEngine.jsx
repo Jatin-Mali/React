@@ -1,67 +1,59 @@
 import React, { useState } from 'react';
-import { evaluate } from 'mathjs';     // ← safe evaluator
+import calculators from '../Data/CalculatorsList'; // Import your calc objects
 
-const CalculatorEngine = ({ config }) => {
+const CalculatorEngine = ({ calcId }) => {
+  const calculator = calculators[calcId];
+
+  if (!calculator) {
+    return <div style={{ fontSize: '18px', color: 'gray' }}>Calculator not found.</div>;
+  }
+
   const [inputs, setInputs] = useState({});
   const [result, setResult] = useState(null);
-  const [error, setError]  = useState('');
 
-  /* keep input values in state */
-  const handleChange = (name, value) => {
-    setInputs(prev => ({ ...prev, [name]: value }));
+  const handleChange = (id, value) => {
+    setInputs(prev => ({ ...prev, [id]: value }));
   };
 
-  /* evaluate the expression in config.expression */
-  const calculate = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     try {
-      setError('');
-      /* build a scope object { A: 5, B: 3 } */
-      const scope = {};
-      config.fields.forEach(f => {
-        const val = inputs[f.name];
-        if (val === undefined || val === '') throw new Error('Missing inputs');
-        scope[f.name] = Number(val);
-      });
-
-      const output = evaluate(config.expression, scope);
+      const output = calculator.calculate(inputs);
       setResult(output);
     } catch (err) {
-      setError(err.message || 'Error in calculation');
-      setResult(null);
+      setResult({ value: 'Error', interpretation: 'Invalid input or formula' });
     }
   };
 
   return (
-    <div className="calc-box">
-      <h2>{config.name}</h2>
-
-      {/* dynamic inputs */}
-      {config.fields.map(({ name, label, type, options }) => (
-        <div key={name}>
-          {type === 'select' ? (
-            <select onChange={e => handleChange(name, e.target.value)}>
-              <option value="">-- choose --</option>
-              {options.map(opt => (
-                <option key={opt} value={opt}>{opt}</option>
-              ))}
-            </select>
-          ) : (
-            <input
-              type={type}
-              placeholder={label}
-              onChange={e => handleChange(name, e.target.value)}
-            />
-          )}
+    <form className="calculator-box" onSubmit={handleSubmit}>
+      {calculator.inputs.map(input => (
+        <div key={input.id}>
+          <label htmlFor={input.id}>{input.label}</label>
+          <input
+            type={input.type}
+            id={input.id}
+            placeholder={input.placeholder}
+            value={inputs[input.id] || ''}
+            onChange={(e) => handleChange(input.id, e.target.value)}
+          />
         </div>
       ))}
 
-      <button onClick={calculate}>Calculate</button>
+      <button type="submit">Calculate</button>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {result !== null && !error && (
-        <p>Result: {result} {config.unit || ''}</p>
+      {result && (
+        <div className="calculator-output">
+          {result.unit
+            ? `${result.value} ${result.unit}`
+            : result.value}
+          <br />
+          {result.interpretation && (
+            <small style={{ color: '#555' }}>{result.interpretation}</small>
+          )}
+        </div>
       )}
-    </div>
+    </form>
   );
 };
 
