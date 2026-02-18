@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./MainContent.css"
 export default function MainContent() {
   const [meme,setMeme] = useState({
-    topText: "",
-    bottomText: "",
+    topText: "I love you",
+    bottomText: "But as a friend",
     img: "../src/assets/meme-image.jpeg"
   })
 
