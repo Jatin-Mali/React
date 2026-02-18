@@ -4,13 +4,13 @@ export default function IngredientsList(props){
     ))
     return(
         <>
-            <section>
+            <section>   
                     <h2>Ingredients on hand</h2>
                     <ul className="ingredients-list">
                         {ingredientList}
                     </ul>
-                    {ingredientList.length > 3 && <div className="get-recipe-container">
-                        <div className="recipe-container-text">
+                    {ingredientList.length > 3 && <div className="get-recipe-container" ref={props.ref}>
+                        <div className="recipe-container-text" >
                             <h3>Ready For a Recipe?</h3>
                             <p>Generate a Recipe from your list of ingredients</p>
                         </div>
